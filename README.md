@@ -150,3 +150,27 @@ The benefit of this is that any VM image that you run on top of the hypervisor c
 A container emulates the user space of an OS.2 You run a container engine, such as Docker, CoreOS rkt, or cri-o, to create isolated processes, memory, mount points, and networking.
 
 The benefit of this is that any container you run on top of the container engine can see only its own user space, so it’s isolated from the host machine and other containers and will run exactly the same way in all environments (your computer, a QA server, a production server, etc.). The drawback is that all of the containers running on a single server share that server’s OS kernel and hardware, so it’s much more difficult to achieve the level of isolation and security you get with a VM.3 However, because the kernel and hardware are shared, your containers can boot up in milliseconds and have virtually no CPU or memory overhead. You can define container images as code using tools such as Docker and CoreOS rkt; 
+
+![The two main types of images: VMs, on the left, and containers, on the right. VMs virtualize the hardware, whereas containers virtualize only user space.](https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781098116736/files/assets/tur3_0104.png)
+
+### Orchestration Tools
+
+Server templating tools are great for creating VMs and containers, but how do you actually manage them? For most real-world use cases, you’ll need a way to do the following:
+
+* Deploy VMs and containers, making efficient use of your hardware.
+
+* Roll out updates to an existing fleet of VMs and containers using strategies such as rolling deployment, blue-green deployment, and canary deployment.
+
+* Monitor the health of your VMs and containers and automatically replace unhealthy ones (auto healing).
+
+* Scale the number of VMs and containers up or down in response to load (auto scaling).
+
+* Distribute traffic across your VMs and containers (load balancing).
+
+* Allow your VMs and containers to find and talk to one another over the network (service discovery).
+
+### Provisioning Tools
+
+You can use provisioning tools to create not only servers but also databases, caches, load balancers, queues, monitoring, subnet configurations, firewall settings, routing rules, Secure Sockets Layer (SSL) certificates, and almost every other aspect of your infrastructure.
+
+
